@@ -13,15 +13,9 @@ Task3Result parse_matrix(std::istream& _In, std::ostream& _Out)
 {
 	int n, m;
 
-	if (!read_number(_In, n) || !read_number(_In, m))
+	if (!read_dim(_In, n, m))
 	{
-		_Out << "Incorrect input dimention data" << std::endl;
-		return Task3Result{ nullptr, 0u, 0 };
-	}
-
-	if (!n || !m)
-	{
-		_Out << "Invalid dimension value" << std::endl;
+		_Out << "Incorrect dimension value" << std::endl;
 		return Task3Result{ nullptr, 0u, 0 };
 	}
 

@@ -84,3 +84,13 @@ bool read_array(std::istream& _In, float* _Array, size_t _Size)
 
 	return readed;
 }
+
+bool read_dim(std::istream& _In, int& _N)
+{
+	return read_number(_In, _N) && _N;
+}
+
+bool read_dim(std::istream& _In, int& _N, int& _M)
+{
+	return (read_number(_In, _N) && read_number(_In, _M)) && (_N && _M);
+}

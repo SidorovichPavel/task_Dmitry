@@ -23,15 +23,10 @@ int* recursive_min(int* _First, int* _Last)
 FindResult find_min_in_array(std::istream& _In, std::ostream& _Out)
 {
 	int n;
-	if (!read_number(_In, n))
-	{
-		_Out << "Incorrect array dimention data" << std::endl;
-		return FindResult{ std::numeric_limits<int>::min(), std::numeric_limits<size_t>::max() };
-	}
 
-	if (!n)
+	if (!read_dim(_In, n))
 	{
-		_Out << "Find min in array function: invalid dimension value" << std::endl;
+		_Out << "Incorrect dimension value" << std::endl;
 		return FindResult{ std::numeric_limits<int>::min(), std::numeric_limits<size_t>::max() };
 	}
 
