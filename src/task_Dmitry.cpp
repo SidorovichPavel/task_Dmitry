@@ -6,6 +6,8 @@
 #include "MinInArray.h"
 #include "task3.h"
 #include "task4.h"
+#include "task5.h"
+
 
 int main()
 {
@@ -39,4 +41,18 @@ int main()
     for (size_t i = 0; i < t4res.size; i++)
         std::cout << "{" << t4res.indices[i * 2 + 0] << ", " << t4res.indices[i * 2 + 1] << "} ";
     std::cout << std::endl;
+
+    std::cout << "Task5: array" << std::endl;
+    auto t5res = task5(fin, std::cout);
+    if (t5res.array)
+    {
+        std::cout << "Array length: " << t5res.size << std::endl;
+        bool f = true;
+        for (auto it = t5res.array;
+            it != t5res.array + t5res.size;
+            it++)
+            std::cout << (f ? (f = false, "") : ", ") << *it;
+        std::cout << std::endl;
+        std::cout << "Arithmetic mean: " << t5res.arithm_mean << std::endl;
+    }
 }

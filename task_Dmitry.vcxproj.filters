@@ -28,6 +28,9 @@
     <ClCompile Include="src\input.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\task5.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MaxInMatrix.h" />
@@ -36,5 +39,6 @@
     <ClInclude Include="src\task3.h" />
     <ClInclude Include="src\task4.h" />
     <ClInclude Include="src\input.h" />
+    <ClInclude Include="src\task5.h" />
   </ItemGroup>
 </Project>
