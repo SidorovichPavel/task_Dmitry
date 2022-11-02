@@ -9,6 +9,6 @@ struct Task3Result
 	int64_t mult;
 };
 
-Task3Result parse_matrix(std::istream& _In, std::ostream& _Out);
+Task3Result task3(std::istream& _In, std::ostream& _Out);
 
 void clear(Task3Result& _Task3Res);

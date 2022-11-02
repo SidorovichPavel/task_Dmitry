@@ -134,7 +134,9 @@
     <ClCompile Include="src\task3.cpp" />
     <ClCompile Include="src\task4.cpp" />
     <ClCompile Include="src\task5.cpp" />
+    <ClCompile Include="src\task8.cpp" />
     <ClCompile Include="src\task_Dmitry.cpp" />
+    <ClCompile Include="src\testing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\input.h" />
@@ -144,6 +146,8 @@
     <ClInclude Include="src\task3.h" />
     <ClInclude Include="src\task4.h" />
     <ClInclude Include="src\task5.h" />
+    <ClInclude Include="src\task8.h" />
+    <ClInclude Include="src\testing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

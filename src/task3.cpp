@@ -9,7 +9,7 @@ void clear(Task3Result& _Task3Res)
 	free_array(_Task3Res.array);
 }
 
-Task3Result parse_matrix(std::istream& _In, std::ostream& _Out)
+Task3Result task3(std::istream& _In, std::ostream& _Out)
 {
 	int n, m;
 

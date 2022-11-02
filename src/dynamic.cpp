@@ -23,8 +23,8 @@ int** alloc_matrix(int n, int m)
 void free_matrix(int** _Matrix)
 {
 	auto buf = _Matrix[0];
-	delete[] _Matrix;
 	delete[] buf;
+	delete[] _Matrix;
 }
 
 #ifdef _DEBUG

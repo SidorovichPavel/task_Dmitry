@@ -11,5 +11,4 @@ struct Task5Result
 
 void clear(Task5Result& _Task);
 
-
 Task5Result task5(std::istream& _In, std::ostream& _Out);
