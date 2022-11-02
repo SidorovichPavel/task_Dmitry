@@ -2,40 +2,38 @@
 #include "dynamic.h"
 #include "input.h"
 
-#include <iostream>
-#include <limits>
-
-
-
-Task1Result find_max_in_matrix(std::istream& _In, std::ostream& _Out)
+void run_task1(std::istream& _In, std::ostream& _Out)
 {
-	int n, m;
+    int n, m;
 
-	if (!read_dim(_In, n, m))
-	{
-		_Out << "Incorrect dimension value" << std::endl;
-		return Task1Result{ false, std::numeric_limits<int>::min() };
-	}
+    if (!eread_dim(_In, n, m, _Out, "Incorrect dimension value"))
+        return;
 
-	auto X = new int[n];
-	if (!read_array(_In, X, n))
-	{
-		delete[] X;
-		_Out << "Incorrect input X array data" << std::endl;
-		return Task1Result{ false, std::numeric_limits<int>::min() };
-	}
+    auto X = new int[n];
+    if (!eread_array(_In, X, n, _Out, "Incorrect input X array data"))
+    {
+        delete[] X;
+        return;
+    }
 
-	auto Y = new int[m];
+    auto Y = new int[m];
 
-	if (!read_array(_In, Y, m))
-	{
-		delete[] Y;
-		delete[] X;
-		_Out << "Incorrect input Y array data" << std::endl;
-		return Task1Result{ false, std::numeric_limits<int>::min() };
-	}
+    if (!eread_array(_In, Y, m, _Out, "Incorrect input X array data"))
+    {
+        delete[] X;
+        delete[] Y;
+        return;
+    }
 
-	//можно организовать поиск в первом же цикле присвоив в max X[0]*Y[0]
+    auto res = find_max_in_matrix(X, n, Y, m);
+    _Out << "task 1 result: " << res << std::endl;
+
+    delete[] Y;
+    delete[] X;
+}
+
+int find_max_in_matrix(int* X, int n, int* Y, int m)
+{
 	auto matrix = alloc_matrix(n, m);
 	for (int i = 0; i < n; ++i)
 		for (int j = 0; j < m; ++j)
@@ -53,8 +51,5 @@ Task1Result find_max_in_matrix(std::istream& _In, std::ostream& _Out)
 
 	free_matrix(matrix);
 
-	delete[] Y;
-	delete[] X;
-
-	return Task1Result{ true, max };
+	return max;
 }

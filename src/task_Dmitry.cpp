@@ -11,8 +11,8 @@
 
 #include "task8.h"
 
-#include "input.h"
 #include "testing.h"
+#include "input.h"
 
 enum class Task : int
 {
@@ -63,6 +63,7 @@ int main()
         case Task::Exit:
             break;
         case Task::First:
+            run_task1(in, out);
             break;
         case Task::Second:
             break;
@@ -83,10 +84,7 @@ int main()
         }
     }
 
-    auto max = find_max_in_matrix(in, out);
-    out << "Max element in matrix: " << max.value << std::endl;
-
-    auto min = find_min_in_array(in, out);
+    /*auto min = find_min_in_array(in, out);
     out << "Min element in array: " << min.value
         << ", index: " << min.index << std::endl;
 
@@ -128,5 +126,6 @@ int main()
 
     auto t8res = task8(in, out);
     if (t8res != std::numeric_limits<int64_t>::min())
-        out << t8res << std::endl;
+        out << t8res << std::endl;*/
 }
+

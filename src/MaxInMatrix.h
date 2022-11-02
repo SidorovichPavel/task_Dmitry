@@ -2,10 +2,6 @@
 
 #include <iostream>
 
-struct Task1Result
-{
-	bool is_complited;
-	int value;
-};
+void run_task1(std::istream& _In, std::ostream& _Out);
 
-Task1Result find_max_in_matrix(std::istream& _In, std::ostream& _Out);
+int find_max_in_matrix(int* X, int n, int* Y, int m);
